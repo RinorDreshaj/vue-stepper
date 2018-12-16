@@ -102,7 +102,7 @@ export default {
       currentStep: {},
       previousStep: {},
       nextButton: {},
-      canContinue: false,
+      canContinue: true,
       finalStep: false,
       keepAliveData: this.keepAlive
     };
@@ -165,7 +165,7 @@ export default {
 
         this.activateStep(currentIndex);
       }
-      this.canContinue = false;
+      this.canContinue = true;
       this.$forceUpdate();
     },
 
@@ -175,7 +175,7 @@ export default {
         this.nextStepAction()
       }
 
-      this.canContinue = false;
+      this.canContinue = true;
 
       this.$emit("before-next-step", { currentStep: this.currentStep }, (next = true) => {
         this.canContinue = true;
